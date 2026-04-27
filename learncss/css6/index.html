@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specificity cascading</title>
+    <style>
+        /*the specificity of this is 1*/
+        h1{
+            color: blue !important;;
+        }
+        /*the specificity of this class is 10*/
+        .yellow{
+            color: yellow;
+        }
+        /*the specificity of this class is 10*/
+        .red{
+            color: red;
+        }
+        /*the specificity of this class is 1+10*/
+        h1.green{
+            color: green;
+        }
+        /*this is an attribute sselctor*/
+        [data-x=a]{
+            color: darkorange;
+        }
+        /*specificity of pseudo selctor is 10*/
+    </style>
+    
+</head>
+<body>
+    <h1 class="yellow red green" style="color: pink;" data-x="a">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+</body>
+</html>

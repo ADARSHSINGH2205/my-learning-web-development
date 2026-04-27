@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BOX MODEL</title>
+    <style>
+        .box{
+            background-color: yellow;
+        }
+        .box1{
+            color: black;
+            margin: 20px;
+            padding: 30px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            height: 120px;
+           
+            text-align: center;
+
+        }
+        /*border collapse kahte hai isse dono me margin 25 hai toh margin 25 hi ho jayegi*/
+        .box2{
+            color: red;
+             margin: 20px;
+            padding: 40px;
+            border: 2px solid blue;
+            height: 120px;
+            box-sizing: border-box;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"><p>I AM A BOX NUMBER 1</p></div>
+    <div class="box box2"><p>I AM A BOX NUMBER 2</p></div>
+</body>
+</html>

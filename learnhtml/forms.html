@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <div>
+        <div>
+            <label for="username">NAME:</label>
+            <input type="text" id="username" name="username" placeholder="enter your name" autofocus required>
+        </div>
+        <div>
+            <label for="password">PASSWORD:</label>
+
+            <input type="password" id="password" name="password" placeholder="enter your password" autofocus required>
+            <a href="#password">CHECK PASSWORD AGIAN </a>
+            <a id="new" style="margin: top 500px; ;"></a>
+        </div>
+        <div>
+            <label for="email">EMAIL:</label>
+            <input type="email" id="email" name="email" placeholder="write your email" required minlength="4"
+                maxlength="50" required autofocus>
+        </div>
+        <div>
+            <label for="gender">GENDER</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">MALE</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">FEMALE</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">OTHER</label>
+        </div>
+        <div>
+            <label for="hobbies">HOBBIES</label>
+            <input type="checkbox" id="cricket" name="hobby" value="cricket">
+            <label for="cricket">CRICKET</label>
+            <input type="checkbox" id="travelling" name="hobby" value="tavelling">
+            <label for="travelling">TRAVELLING</label>
+            <input type="checkbox" id="gaming" name="hobby" value="gaming">
+            <label for="gaming">GAMING</label>
+        </div>
+        <div>
+            <label for="country">COUNTRY:</label>
+            <select name="country" id="country">
+                <option value="india">INDIA</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+            </select>
+        </div>
+        <div>
+            <label for="volume">VOLUME</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" step="2" value="50">
+        </div>
+        <div>
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div>
+            <label for="apt">APPOINTMENT TIME</label>
+            <input type="time" id="apt" name="apt" min="9:00" max="18:00" required>
+        </div>
+        <div>
+            <label for="phone">PHONE NO.</label>
+            <input type="number" id="phone" name="phone" placeholder="+91" pattern="[+0-9\s]{10,15}" required>
+        </div>
+        <div>
+            <label for="fav">FAVORITE COLOUR</label>
+            <input type="color" id="fav" name="fav" value="#ff0000" </div>
+            <div>
+                <label for="comments">COMMENTS</label><br>
+                <textarea id="comments" name="comments" rows="5" cols="40" placeholder="write down your feedback"
+                    maxlength="500" required></textarea>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>PERSONAL DETAILS</legend>
+                    <label for="fname">FIRST NAME </label>
+                    <input type="text" id="fname" name="fname" placeholder=" first name " required>
+                    <label for="sname">MIDDLE NAME </label>
+                    <input type="text" id="sname" name="sname" placeholder="middle name" required>
+                    <label for="lname">LAST NAME</label>
+                    <input type="text" id="lname" name="lname" placeholder="last name" required>
+                    <input type="button" value="done">
+
+                </fieldset>
+            </div>
+            <div>
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </div>
+            </div>
+    </form>
+
+
+</body>
+
+</html>

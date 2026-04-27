@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 SELECTORS</title>
+    <style>
+        /*ELEMENT SELECTOR*/
+        div{
+            background-color: yellow;
+        }
+        /*CLASS SELCTORS*/    
+        .red{
+            background-color: red;
+            color: yellow;
+        }
+        /*ID SELECTORS*/
+        #green{
+            color: green;
+            background-color: yellow;
+        }
+        /*child selectors*/
+        div>article>p{
+            background-color: red;
+            color: black;
+        }
+        /* DESECENDENT SELECTOR */
+        div p{
+            background-color: black;
+            color: white;
+        }
+        /* UNIVERSAL SELECTORS */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* PSUEDO SELECTORS */
+        a:visited{
+            color: green;
+        }
+        a:link{
+            color: red;
+        }
+        a:active{
+            background-color: yellow;
+        }
+        a:hover{
+            background-color: skyblue;
+        }
+        p:first-child{
+            background-color: skyblue;
+        }
+        </style>
+</head>
+<body>
+    <div class="two">
+      <p>ADARSH singh</p>
+      <p>GAURAV SINGH</p>
+    </div>
+    <div class="red">
+        <h1>I AM ADARSH SINGH</h1>
+    </div>
+    <div>
+        <h1>MY HOBBY IS TO PLAY CRICKET</h1>
+        <article>
+            <p>AND SO MANY THING THAT I LOVE TO DO LIKE PLAYING BASKETBALL, LISTINING MUSIC </p>
+        </article>
+        <p>THATS ALL ABOUT ME</p>
+    </div>
+    <div id="green">
+        <h1>I WAS A SHORT TEMPERED MAN</h1>
+    </div>
+    <a href="https://www.youtube.com/watch?v=1cEG1T8beO4&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=17">CSS VIDEO</a>
+    <a href="https://chatgpt.com/c/68b2fb74-ac38-832a-af04-83d84666f489">CHATGPT</a>
+</body>
+</html>

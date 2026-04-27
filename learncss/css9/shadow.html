@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS DISPLAY AND OUTLINES</title>
+    <STYLE>
+        /* box-shadow=hoffset voffset blur spread color inset
+        h-offset and v-offset determines the horizontal and vertical position of the shadow 
+        blur determines the larger the blur value is the blurier the shadow gets
+        spread determines expand or shrink the shadow size 
+        color you can give the color to your shandow 
+        inset makes the shadow inner*/
+        .box {
+            display: inline-block;
+            width: 20vw;
+            margin: 1.2rem;
+            padding: 1.3rem;
+            border: 3px solid black;
+            border-radius: 1.4rem;
+            box-sizing: border-box;
+            box-shadow: 10px 10px 15px rgb(173, 238, 69);
+            text-align: center;
+
+
+        }
+        .shadow{
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 30px;
+            letter-spacing: 3px;
+            text-shadow: 6px 6px 15px red;
+            text-transform: uppercase;
+            outline: 5px solid blue;
+            outline-offset: 0.2rem;
+            border: 6px solid green;
+            border-radius: 1.4rem;
+
+        }
+    </STYLE>
+</head>
+
+<body>
+    <div class="box">I AM A BOX</div>
+    <div class="box">I AM A BOX</div>
+    <p class="shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium obcaecati ipsum neque,
+        voluptatibus eveniet, molestias voluptatem modi repudiandae, esse incidunt perspiciatis. Exercitationem pariatur
+        odio nemo sequi rem corporis est non animi velit eveniet. Accusantium harum voluptatem quidem ducimus odit
+        dolore.</p>
+
+
+</body>
+
+</html>
