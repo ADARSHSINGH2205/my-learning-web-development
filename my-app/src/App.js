@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from "react";
 
 function Header(){
   return <h1>This is the heading of the project</h1>;
@@ -47,7 +48,13 @@ function App(){
   function handleClick(msg){
     alert(msg);   
   }
-
+  const [count,setCount]=useState(0);
+  const [age,setAge]=useState(0);
+  const [show,setShow]=useState(true);
+  const [user,setUser]=useState({
+    name:"",
+    age:0
+  })
   return (
     <div className='box'>
       <Header /> 
@@ -72,7 +79,32 @@ function App(){
       <Card2>
         <button onClick={()=>handleClick("done")}>okay</button>
       </Card2>
+      <div>
+        <h1>{count}</h1>
+        <h2>{age}</h2>
+
+        <button onClick={()=>setCount(count+1)}>increase</button>
+        <button onClick={()=>setCount(count-1)}>descrease</button>
+        <button onClick={()=>setCount(0)}>reset</button>
+         <button onClick={()=>setAge(age+1)}>increase</button>
+        <button onClick={()=>setAge(age-1)}>descrease</button>
+        <button onClick={()=>setAge(0)}>reset</button>
+        <button onClick={()=>setShow(!show)}>toggle</button>
+        {show&&<h1>i am adarsh singh</h1>}
+        <div>
+          <input type='text'placeholder='name' onChange={(e)=>setUser({...user, name: e.target.value})}> 
+          </input>
+           <input type='number'placeholder='age' onChange={(e)=>setUser({...user, age: e.target.value})}> 
+          </input>
+          <h1>{user.name}</h1>
+          <h1>{user.age}</h1>
+          <button onClick={()=>setUser({name:"",age:0})}>reset</button>
+        
+        </div>
+      </div>
     </div>
+  
+
   );
 }
 
