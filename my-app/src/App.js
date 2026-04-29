@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from "react";
+import { useState } from "react";
 
 function Header(){
   return <h1>This is the heading of the project</h1>;
@@ -36,11 +36,18 @@ function Button3({name, onClick}){
     <button onClick={onClick}>{name}</button>   
   );
 }
+
 function Card2({children}){
   return(
-  <div style={{border: "2px solid blue" ,padding:"10px",margin:"20px",backgroundColor:"red"}}>{children}</div>
-  )
-
+    <div style={{
+      border: "2px solid blue",
+      padding: "10px",
+      margin: "20px",
+      backgroundColor: "red"
+    }}>
+      {children}
+    </div>
+  );
 }
 
 function App(){
@@ -48,18 +55,23 @@ function App(){
   function handleClick(msg){
     alert(msg);   
   }
-  const [count,setCount]=useState(0);
-  const [age,setAge]=useState(0);
-  const [show,setShow]=useState(true);
-  const [user,setUser]=useState({
-    name:"",
-    age:0
-  })
+
+  const [count, setCount] = useState(0);
+  const [age, setAge] = useState(0);
+  const [show, setShow] = useState(true);
+  const [user, setUser] = useState({
+    name: "",
+    age: 0
+  });
+  const [color, setColor] = useState(false);
+
   return (
     <div className='box'>
+      
       <Header /> 
       <Button />
       <User name='Adarsh' age={21} />
+
       <Card title='adarsh' des='he is a student at a lloyd clg' />
       <Card title='react' des='it is easily reusable language' />
 
@@ -72,39 +84,73 @@ function App(){
         name='login' 
         onClick={() => handleClick("you logged into your account")}
       />
+
       <Card2>
         <h1>adarsh singh</h1>
-        <p> he is a a student at lloyd institue of engineering technology and he is brilliant student</p>
+        <p>he is a student at lloyd institute of engineering technology</p>
       </Card2>
+
       <Card2>
-        <button onClick={()=>handleClick("done")}>okay</button>
+        <button onClick={() => handleClick("done")}>okay</button>
       </Card2>
+
+      {/* Counter Section */}
       <div>
-        <h1>{count}</h1>
-        <h2>{age}</h2>
+        <h1>Count: {count}</h1>
+        <h2>Age: {age}</h2>
 
-        <button onClick={()=>setCount(count+1)}>increase</button>
-        <button onClick={()=>setCount(count-1)}>descrease</button>
-        <button onClick={()=>setCount(0)}>reset</button>
-         <button onClick={()=>setAge(age+1)}>increase</button>
-        <button onClick={()=>setAge(age-1)}>descrease</button>
-        <button onClick={()=>setAge(0)}>reset</button>
-        <button onClick={()=>setShow(!show)}>toggle</button>
-        {show&&<h1>i am adarsh singh</h1>}
-        <div>
-          <input type='text'placeholder='name' onChange={(e)=>setUser({...user, name: e.target.value})}> 
-          </input>
-           <input type='number'placeholder='age' onChange={(e)=>setUser({...user, age: e.target.value})}> 
-          </input>
-          <h1>{user.name}</h1>
-          <h1>{user.age}</h1>
-          <button onClick={()=>setUser({name:"",age:0})}>reset</button>
-        
-        </div>
+        <button onClick={() => setCount(prev => prev + 1)}>Increase</button>
+        <button onClick={() => setCount(prev => prev > 0 ? prev - 1 : 0)}>Decrease</button>
+        <button onClick={() => setCount(0)}>Reset</button>
+
+        <br /><br />
+
+        <button onClick={() => setAge(prev => prev + 1)}>Increase Age</button>
+        <button onClick={() => setAge(prev => prev > 0 ? prev - 1 : 0)}>Decrease Age</button>
+        <button onClick={() => setAge(0)}>Reset Age</button>
+
+        <br /><br />
+
+        <button onClick={() => setShow(!show)}>Toggle</button>
+
+        {show && <h1>I am Adarsh Singh</h1>}
       </div>
-    </div>
-  
 
+      {/* Form Section */}
+      <div>
+        <input 
+          type='text' 
+          placeholder='name' 
+          value={user.name}
+          onChange={(e)=>setUser({...user, name: e.target.value})} 
+        />
+
+        <input 
+          type='number' 
+          placeholder='age' 
+          value={user.age}
+          onChange={(e)=>setUser({...user, age: Number(e.target.value)})} 
+        />
+
+        <h1>{user.name}</h1>
+        <h1>{user.age}</h1>
+
+        <button onClick={()=>setUser({name:"", age:0})}>Reset User</button>
+      </div>
+
+      
+      <div style={{
+        backgroundColor: color ? "yellow" : "white",
+        color: color ? "white" : "black",
+        height: "100vh",
+        marginTop: "20px",
+        textAlign:'center'
+      }}>
+        <button onClick={() => setColor(!color)}>Change Color</button>
+        <p>yeah im finally here</p>
+      </div>
+
+    </div>
   );
 }
 
