@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from "react";
+import { useState,useEffect, useEffectEvent } from "react";
 
 function Header(){
   return <h1>This is the heading of the project</h1>;
@@ -64,6 +64,15 @@ function App(){
     age: 0
   });
   const [color, setColor] = useState(false);
+  const [count2,setCount2]=useState(0);
+  useEffect(()=>{
+    console.log("hello world")
+  },[])
+  useEffect(()=>{
+    document.title= `count :${count2}`
+  },[count2]);
+
+
 
   return (
     <div className='box'>
@@ -94,7 +103,7 @@ function App(){
         <button onClick={() => handleClick("done")}>okay</button>
       </Card2>
 
-      {/* Counter Section */}
+     
       <div>
         <h1>Count: {count}</h1>
         <h2>Age: {age}</h2>
@@ -116,7 +125,6 @@ function App(){
         {show && <h1>I am Adarsh Singh</h1>}
       </div>
 
-      {/* Form Section */}
       <div>
         <input 
           type='text' 
@@ -148,6 +156,8 @@ function App(){
       }}>
         <button onClick={() => setColor(!color)}>Change Color</button>
         <p>yeah im finally here</p>
+        <h1>{count2}</h1>
+        <button onClick={()=>setCount2(count2+1)}>updatetitle</button>
       </div>
 
     </div>
